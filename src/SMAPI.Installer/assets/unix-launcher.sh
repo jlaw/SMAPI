@@ -79,7 +79,7 @@ else
 
     # if no terminal was found, run in current shell or with no output
     if [ -z "$LAUNCHTERM" ]; then
-        sh -c 'TERM=xterm $LAUNCHER'
+        sh -c "TERM=xterm $LAUNCHER"
         if [ $? -eq 127 ]; then
             $LAUNCHER --no-terminal
         fi
@@ -116,7 +116,7 @@ else
             ;;
         *)
             # If we don't know the terminal, just try to run it in the current shell.
-            sh -c 'TERM=xterm $LAUNCHER'
+            sh -c "TERM=xterm $LAUNCHER"
             # if THAT fails, launch with no output
             if [ $? -eq 127 ]; then
                 $LAUNCHER --no-terminal
